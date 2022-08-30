@@ -32,12 +32,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" aria-current="page" href="index.html"
                 >Dashboard</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">All Customers</a>
+              <a class="nav-link" href="allCustomer.html">All Customers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Add Customer</a>
@@ -47,123 +47,21 @@
       </div>
     </nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        var ctx = $("#chart-line");
-        var myLineChart = new Chart(ctx, {
-          type: "pie",
-          data: {
-            labels: ["In", "Out"],
-            datasets: [
-              {
-                data: [4500, 1700],
-                backgroundColor: [
-                  "rgba(100, 255, 0, 0.5)",
-                  "rgba(255, 0, 0, 0.5)",
-                ],
-              },
-            ],
-          },
-          options: {
-            title: {
-              display: true,
-              text: "Balance Payments",
-            },
-          },
-        });
-      });
-    </script>
-    <div class="page-content page-container" id="page-content">
-      <div class="padding">
-        <div class="row">
-          <div class="container-fluid d-flex justify-content-center">
-            <div class="col-sm-8 col-md-6">
-              <div>
-                <div
-                  class="chartjs-size-monitor"
-                  style="
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    right: 0px;
-                    bottom: 0px;
-                    overflow: hidden;
-                    pointer-events: none;
-                    visibility: hidden;
-                    z-index: -1;
-                  "
-                >
-                  <div
-                    class="chartjs-size-monitor-expand"
-                    style="
-                      position: absolute;
-                      left: 0;
-                      top: 0;
-                      right: 0;
-                      bottom: 0;
-                      overflow: hidden;
-                      pointer-events: none;
-                      visibility: hidden;
-                      z-index: -1;
-                    "
-                  >
-                    <div
-                      style="
-                        position: absolute;
-                        width: 1000000px;
-                        height: 1000000px;
-                        left: 0;
-                        top: 0;
-                      "
-                    ></div>
-                  </div>
-                  <div
-                    class="chartjs-size-monitor-shrink"
-                    style="
-                      position: absolute;
-                      left: 0;
-                      top: 0;
-                      right: 0;
-                      bottom: 0;
-                      overflow: hidden;
-                      pointer-events: none;
-                      visibility: hidden;
-                      z-index: -1;
-                    "
-                  >
-                    <div
-                      style="
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        left: 0;
-                        top: 0;
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <canvas
-                  id="chart-line"
-                  width="199"
-                  height="200"
-                  class="chartjs-render-monitor"
-                  style="display: block; width: 199px; height: 300px"
-                ></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="container">
+      <h1>Total Balance Payment Amounts</h1>
+      <div>
+        <h4 id="in">Cash In:</h4>
+        <h4 id="out">Cash Out:</h4>
       </div>
     </div>
 
     <div class="container">
       <h1>Top Contributers</h1>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">In</button>
-        <button type="button" class="btn btn-danger">Out</button>
+        <button type="button" class="btn btn-success" id="inClick">In</button>
+        <button type="button" class="btn btn-danger" id="outClick">Out</button>
       </div>
-      <div>
+      <div id="contributerList">
         <!-- Add customer list in decending order -->
       </div>
     </div>
@@ -173,5 +71,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
